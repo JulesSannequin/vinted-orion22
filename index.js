@@ -1,11 +1,10 @@
 require("dotenv").config();
-mongoose.connect(process.env.MONGODB_URI);
 console.clear();
 const express = require("express");
 const mongoose = require("mongoose");
 
 //connexion à la bdd
-mongoose.connect("mongodb://localhost/vinted-orion22");
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 app.use(express.json());
