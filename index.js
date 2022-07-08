@@ -1,3 +1,5 @@
+require("dotenv").config();
+mongoose.connect(process.env.MONGODB_URI);
 console.clear();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -18,6 +20,6 @@ app.all("*", (req, res) => {
   res.status(400).json("Route introuvable");
 });
 
-app.listen(3000, () => {
-  console.log("Server has started ! 🤙");
+app.listen(process.env.PORT, () => {
+  console.log("server has started");
 });
